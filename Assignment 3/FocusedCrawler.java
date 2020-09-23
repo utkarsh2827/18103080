@@ -11,6 +11,7 @@ public class FocusedCrawler{
    public static void main(String[] args){
 		try{
 			String BASE_URL = "http://pec.ac.in";
+			print("Starting to Scrape!\n Base Url: "+BASE_URL+"\n");
 			// Retrieving all the department urls
 			Document document = Jsoup.connect(BASE_URL+"/departments").get();
 			Elements tags = document.body().select("div.field-item a");

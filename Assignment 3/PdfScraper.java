@@ -18,6 +18,7 @@ public class PdfScraper{
 		ArrayList<String> urls = new ArrayList<String>();
 		urls.add(seedUrl);
 		visitedUrls.add(seedUrl);
+		print("Starting to Scrape!\n");
 		try{
 			File f = new File("pdf_links.csv");
 			f.createNewFile();
@@ -61,6 +62,8 @@ public class PdfScraper{
 				i++;
 			}
 			writer.close();
+			print("Total Links visited: "+urls.size()+"\n");s
+			print("Total PDF Links retrieved: "+pdfUrls.size()+"\n");
 		}
 		catch(IOException io){
     		io.printStackTrace();

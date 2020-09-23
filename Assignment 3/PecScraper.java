@@ -5,7 +5,11 @@ import org.jsoup.select.Elements;
 import java.util.*;
 import java.io.*;
 public class PecScraper {
-   public static void main(String[] args){
+	public static void print(String msg){
+		System.out.print(msg);
+	}
+   	public static void main(String[] args){
+   		print("Started Scraping!\n");
 		try{
 			Document document = Jsoup.connect("http://pec.ac.in").get();
 			System.out.println(document.title());
@@ -33,11 +37,12 @@ public class PecScraper {
 					writer.write(linkText+","+linkUrl+"\n");
 			}
 			writer.close();
+			print("Scraping finished!\n");
 		}
 		catch(IOException io){
 			io.printStackTrace();
 		}
-	
+		
 
    }
 }
